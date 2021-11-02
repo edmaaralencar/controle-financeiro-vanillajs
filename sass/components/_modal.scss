@@ -1,0 +1,156 @@
+.modal {
+    background-color: #f0f2f5;
+    width: 90%;
+    max-width: 50rem;
+    padding: 3rem; 
+    position: relative;
+
+    &-close {
+        cursor: pointer;
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+    }
+
+    &-open {
+        border: 0;
+        padding: .8rem 1.2rem;
+        border-radius: .5rem;
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+
+    &-button {
+        padding: 1rem;
+        border: 1px solid #C4C4C4;
+        background: #FFFFFF;
+        font-weight: 500;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    &-input {
+        &--container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+
+        label {
+            font-size: 2rem;
+        }
+
+        input, select {
+            border: 1px solid #C4C4C4;
+            padding: 1rem;
+            border-radius: 5px;
+            outline: none;
+
+            option {
+                color: #aaaaaa;
+            }
+
+            &::placeholder {
+                color: #aaaaaa;
+                opacity: 1; 
+            }
+        }
+    }
+    
+    &-title {
+        font-size: 3rem;
+    }
+
+    &-overlay--transaction {
+        background-color: rgba(0, 0, 0, .7);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        visibility: hidden;
+        opacity: 0;
+    
+        z-index: 999;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+select {
+    color: #aaaaaa;
+}
+
+.modal-saving {
+    background-color: #f0f2f5;
+    width: 90%;
+    max-width: 50rem;
+    padding: 3rem; 
+    position: relative;
+}
+
+.modal-overlay--saving {
+    background-color: rgba(0, 0, 0, .7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: 999;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.modal-addsaving {
+    background-color: #f0f2f5;
+    width: 90%;
+    max-width: 50rem;
+    padding: 3rem; 
+    position: relative;
+}
+
+.modal-overlay--addsaving {
+    background-color: rgba(0, 0, 0, .7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: 999;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+}

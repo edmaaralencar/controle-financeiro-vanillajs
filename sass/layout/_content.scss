@@ -1,0 +1,280 @@
+.content {
+    background-color: $color-background-content;
+    color: $color-content-text;
+    flex: 1;
+    border-radius: 25px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-section--title {
+        font-weight: 600;
+        font-size: 3.2rem;
+    }
+}
+
+.balance {
+    display: flex;
+    flex-direction: column;
+
+    &-container {
+        margin-top: 2.4rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+
+    &-card {
+        border-radius: .8rem;
+        padding: 2.5rem;
+        background-color: $color-background-balance;
+
+        &--title {
+            display: flex;
+            justify-content: space-between;
+
+            &__text {
+                font-size: 2.4rem;
+                font-weight: 600;
+            }
+
+            &__box {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                background-color: $color-content-text;
+            }
+        }
+
+        &--money {
+            margin-top: 3rem;
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.savings {
+    // &-container {
+    //     background-color: $color-background-balance;
+    //     margin-top: 2.4rem;
+
+    //     border-radius: 1.5rem;
+    //     padding: 3rem;
+    // }
+}
+
+.top-side, .bottom-side {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: 4rem;
+}
+
+.bottom-side {
+    margin-top: 3rem;
+}
+
+
+.table {
+    color: $color-content-text;
+
+    &-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &-icon img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &-container {
+        margin-top: 3rem;
+    }
+
+    &-category {
+        font-weight: bold;
+    }
+
+    &-delete {
+        padding: .7rem 1.5rem;
+        border-radius: 5px;
+        background: #DEDEDE;
+        color: $color-background-main;
+        cursor: pointer;
+        border: 0;
+        font-size: 1.7rem;
+        margin-bottom: 1.6rem;
+    }
+
+    &-row {
+        border-bottom: 1px solid $color-border-table;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+   
+        margin-bottom: 1.7rem; 
+
+        div {
+            margin-bottom: 1.6rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: $color-background-balance;
+    padding: 1rem;
+    border-radius: 1rem;
+    padding: 3rem;
+
+    &-container {
+        width: 300px;
+        height: auto;
+    }
+
+    &-labels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 0;
+    }
+
+    &-label {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &--name {
+            font-size: 2rem;
+        }
+
+        &--color {
+            &__food {
+                background-color: #606060;
+                width: 25px;
+                height: 25px;
+            }
+
+            &__job {
+                background-color: #2F2F2F;
+                width: 25px;
+                height: 25px;
+            }
+
+            &__fitness {
+                background-color: #3C3C3C;
+                width: 25px;
+                height: 25px;
+            }
+
+            &__transport {
+                background-color: #222222;
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1285px) and (max-width: 1425px) {
+    .balance-card {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .bottom-side, .top-side {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+    .chart {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5rem;
+
+        &-labels {
+            gap: 4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .balance-container {
+        gap: 1.5rem;        
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .header {
+        padding: 2rem;
+    }
+
+    .grid {
+        margin: 2rem;
+        gap: 1rem;
+    }
+
+    .content {
+        padding: 2.5rem;
+    }
+
+    .chart {
+        &-labels {
+            gap: 4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .balance-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .balance-card {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .table-container {
+        overflow-x: scroll;
+    }
+
+    .table-row {
+        width: 140%;
+    }
+}
+
+.transactions-income--container {
+    // display: none;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.transactions-expense--container {
+    // display: none;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}

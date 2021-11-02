@@ -1,0 +1,105 @@
+.savings {
+
+    &-page {
+        // display: none;
+        flex-direction: column;
+        gap: 2.4rem;
+    }
+
+    &-container {
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+
+    &-intro--container {
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-button {
+        padding: 1.1rem;
+        border: 0;
+        font-size: 1.7rem;
+        cursor: pointer;
+        background-color: #DEDEDE;
+        border-radius: 1rem;
+    }
+}
+
+.saving {
+    width: 42rem;
+    background: #292929;
+    border-radius: 1.5rem;
+    
+    padding: 3rem;
+
+    color: #DEDEDE;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &.home {
+        margin-top: 2.4rem;
+    }
+
+    &-edit {
+        padding: .6rem;
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+        background-color: #DEDEDE;
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    &-name {
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+
+    &-progression {
+        &--container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &--bar {
+            width: 19.5rem;
+            background-color: #353535;
+            border-radius: 8px;
+            height: 1.8rem;
+        
+            position: relative;
+
+            &__done {
+                background-color: #DEDEDE;
+
+                position: absolute;
+                border-radius: 8px;
+                height: 1.8rem;
+            }
+        }
+
+        &--percentage {
+            font-size: 1.6rem;
+            color: #C6C6C6;
+            margin-left: .3rem;
+        }
+    }
+
+    .currentMoney {
+        color: #DEDEDE;
+        font-size: 2.4rem;
+        font-weight: bold;
+    }
+
+    .totalValue {
+        font-size: 1.6rem;
+        color: #C6C6C6;
+        margin-left: .3rem;
+    }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css//main.css">
+    <title>Controle Financeiro</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-logo">
+            <img class="menu" src="./imgs/menu.svg" alt="">
+            <img src="./imgs/logo.svg" alt="" class="logo">
+        </div>
+
+        <div class="header-perfil">
+            <img src="./imgs/profile.png" alt="" class="header-perfil--img">
+            <div class="header-perfil--name">Edmar Alencar</div>
+            <img src="./imgs/chevron-down.svg" alt="" class="header-perfil--icon">
+        </div>
+    </header>
+    
+    <div class="grid">
+        <nav class="sidebar">
+            <div class="sidebar-box home-anchor">
+                <img src="./imgs/home.svg" alt="" class="sidebar-box--icon">
+                <div class="sidebar-box--name">Dashboard</div>
+            </div>
+            <div class="sidebar-box income-anchor">
+                <img src="./imgs/arrow-up.svg" alt="" class="sidebar-box--icon">
+                <div class="sidebar-box--name">Entradas</div>
+            </div>
+            <div class="sidebar-box expense-anchor">
+                <img src="./imgs/arrow-down.svg" alt="" class="sidebar-box--icon">
+                <div class="sidebar-box--name">Saídas</div>
+            </div>
+            <div class="sidebar-box saving-anchor">
+                <img src="./imgs/navigation.svg" alt="" class="sidebar-box--icon">
+                <div class="sidebar-box--name">Poupança</div>
+            </div>
+        </nav>
+
+        <main class="content">
+
+            <div class="transactions-expense--container">
+                <div class="content-section--title">Saídas</div>
+                <div class="table-container--expenses"></div>
+            </div>
+
+            <div class="transactions-income--container">
+                <div class="content-section--title">Entradas</div>
+                <div class="table-container--incomes"></div>
+            </div>
+
+            <div class="savings-page">
+                <div class="savings-intro--container">
+                    <div class="content-section--title">Poupança</div>
+                    <button class="savings-button">Adicionar poupança</button>
+                </div>
+                <div class="savings-container"></div>
+            </div>
+
+            <div class="top-side">
+
+                <div class="balance">
+                    <div class="content-section--title">Dashboard</div>
+                    <div class="balance-container">
+                        <div class="balance-card">
+                            <div class="balance-card--title">
+                                <div class="balance-card--title__text">Total</div>
+                                <div class="balance-card--title__box">
+                                    <img src="./imgs/attach_money.svg" alt="">
+                                </div>
+                            </div>
+    
+                            <div class="balance-card--money total">R$ 00,00</div>
+                        </div>
+                        <div class="balance-card">
+                            <div class="balance-card--title">
+                                <div class="balance-card--title__text">Entrada</div>
+                                <div class="balance-card--title__box">
+                                    <img src="./imgs/attach_money.svg" alt="">
+                                </div>
+                            </div>
+    
+                            <div class="balance-card--money income">R$ 00,00</div>
+                        </div>
+                        <div class="balance-card">
+                            <div class="balance-card--title">
+                                <div class="balance-card--title__text">Saída</div>
+                                <div class="balance-card--title__box">
+                                    <img src="./imgs/attach_money.svg" alt="">
+                                </div>
+                            </div>
+    
+                            <div class="balance-card--money expense">R$ 00,00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="savings">
+                    <div class="content-section--title">Poupança</div>
+
+                    <div class="saving home">
+                        <div class="saving-name"></div>
+                        <div class="saving-progression--container">
+                            <div class="saving-progression--bar">
+                                <div class="saving-progression--bar__done"></div>
+                            </div>
+                  
+                            <div class="saving-progression-money">
+                                <span class="currentMoney"></span>
+                                <span class="totalValue"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-side">
+                <div class="table">
+                    <div class="table-box">
+                        <div class="content-section--title">Transações recentes</div>
+                        <button class="modal-open">Adicionar transação</button>
+                    </div>
+                    <div class="table-container">
+
+                    </div>
+                </div>
+
+                <div class="chart">
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="chart-labels">
+                        <div class="chart-label">
+                            <div class="chart-label--color__food"></div>
+                            <div class="chart-label--name">Comida</div>
+                        </div>
+                        <div class="chart-label">
+                            <div class="chart-label--color__job"></div>
+                            <div class="chart-label--name">Trabalho</div>
+                        </div>
+                        <div class="chart-label">
+                            <div class="chart-label--color__fitness"></div>
+                            <div class="chart-label--name">Fitness</div>
+                        </div>
+                        <div class="chart-label">
+                            <div class="chart-label--color__transport"></div>
+                            <div class="chart-label--name">Transporte</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay--transaction">
+        <form class="modal">
+            <img class="modal-close transaction-close" src="./imgs/close.svg" alt="">
+            <div class="modal-title">Adicionar transação</div>
+
+            <div class="modal-input--container">
+                <div class="modal-input">
+                    <label>Nome</label>
+                    <input name="name" placeholder="Comida" type="text">
+                </div>
+                <div class="modal-input">
+                    <label>Valor</label>
+                    <input name="value" placeholder="Comida" type="number">
+                </div>
+                <div class="modal-input">
+                    <label>Categoria</label>
+                    <select name="category">
+                        <option selected>Veja as categorias</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Transporte">Transporte</option>
+                    </select>                   
+                </div>
+                <button class="modal-button">
+                    Adicionar transação
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="modal-overlay--saving">
+        <form class="modal-saving">
+            <img class="modal-close saving-close" src="./imgs/close.svg" alt="">
+            <div class="modal-title">Editar poupança</div>
+
+            <div class="modal-input--container">
+                <div class="modal-input">
+                    <label>Nome</label>
+                    <input class="input-saving--name" name="name">
+                </div>
+                <div class="modal-input">
+                    <label>Dinheiro disponível</label>
+                    <input class="input-saving--currentMoney" name="currentMoney" type="number">
+                </div>
+                <div class="modal-input">
+                    <label>Valor</label>
+                    <input class="input-saving--value" name="value" type="number">
+                </div>
+                <button class="modal-button">Editar</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="modal-overlay--addsaving">
+        <form class="modal-addsaving">
+            <img class="modal-close addsaving-close" src="./imgs/close.svg" alt="">
+            <div class="modal-title">Adicionar poupança</div>
+
+            <div class="modal-input--container">
+                <div class="modal-input">
+                    <label>Nome</label>
+                    <input class="input-saving--name" name="name">
+                </div>
+                <div class="modal-input">
+                    <label>Dinheiro disponível</label>
+                    <input class="input-saving--currentMoney" name="currentMoney" type="number">
+                </div>
+                <div class="modal-input">
+                    <label>Valor</label>
+                    <input class="input-saving--value" name="value" type="number">
+                </div>
+                <button class="modal-button">Adicionar</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/savings.js"></script>
+    <script src="./js/transactions.js"></script>
+</body>
+</html>
